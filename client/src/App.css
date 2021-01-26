@@ -1,0 +1,602 @@
+/* General Styles */
+/* ------------------------------------------------ */
+:root {
+  --primary: #222831;
+  --secondary: #393e46;
+  --tertiary: #d65a31;
+  --niceWhite: #EEE; 
+}
+
+.light {
+  --primary: #BBB;
+  --secondary: #EEE;
+  --tertiary: #d65a31;
+  --niceWhite: #111;
+}
+
+.dark {
+  --primary: #222831;
+  --secondary: #393e46;
+  --tertiary: #d65a31;
+  --niceWhite: #EEE; 
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  line-height: 1.5;
+} 
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  color: var(--tertiary);
+  font-family: 'Aldrich';
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--secondary);
+  color: var(--niceWhite);
+  font-family: 'Open Sans';
+}
+
+p {
+  font-size: 15px;
+}
+
+.content, .contactContent {
+  margin-top: 20%;
+  margin-bottom: 10%;
+  padding: 0 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--secondary);
+}
+
+.activeLink {
+  color: var(--tertiary);
+  font-size: 20px;
+}
+
+/* Navigation Bar style */
+/* ------------------------------------------------ */
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--tertiary);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+}
+
+.navBar a {
+  text-decoration: none;
+  font-family: 'Aldrich';
+}
+
+.logo {
+  color: var(--tertiary);
+  margin: 0;
+  padding: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: var(--primary);
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  width: 100%;
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: var(--niceWhite);
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: var(--tertiary);
+}
+
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 0.5em;
+  height: 100%;
+  font-size: 2em;
+}
+
+.nav-toggle-label {
+  font-size: 2em;
+  color: var(--niceWhite);
+}
+
+.nav-toggle-label:hover {
+  color: var(--tertiary);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+/* Homepage Style */
+/* ------------------------------------------------- */
+.homeMainSection {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.me {
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10%;
+}
+
+.me p, h4 {
+  margin: 1%;
+  text-align: left;
+}
+
+.headShot {
+  border-radius: 50%;
+  border: 1px solid var(--primary);
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.about, .contactInfo {
+  width: 100%;
+  padding: 2% 2% 2% 2%;
+  background-color: var(--primary);
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.about {
+  margin-bottom: 10%;
+}
+
+.about p {
+  padding-left: 2%;
+}
+
+/* Contact info style */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  justify-content: center;
+  align-items: center;
+}
+.contactInfo ul {
+  list-style-type: none;
+  list-style-position: inside;
+  color: var(--niceWhite);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+}
+
+.contactInfo a {
+  text-decoration: none;
+  color: var(--niceWhite);
+}
+
+.fab, .material-icons.orange {
+  padding: 1px 10px 1px 1px;
+  font-size: 24px;
+  color: var(--tertiary);
+}
+
+.fab {
+  font-size: 22px;
+}
+
+/* Contact Style */
+/* -------------------------------------------------------------- */
+.contactFormDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  margin-top: 10%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.contactForm input, .contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  background-color: var(--niceWhite);
+}
+
+.contactForm textarea {
+  min-height: 100px;
+}
+
+.contactForm input.button {
+  font-family: 'Aldrich';
+  margin-top: 10px;
+  color: var(--tertiary);
+  background-color: #000;
+  border: none;
+  width: 100%;
+}
+
+.contactForm input.button:hover {
+  color: var(--niceWhite);
+}
+
+.contactForm label {
+  line-height: 1.7em;
+  color: var(--tertiary);
+}
+
+.formSuccess {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 7px;
+  border: 1px solid black;
+  margin-top: 3%;
+  padding: 3%;
+
+}
+
+.formSuccess h2 {
+  color: green;
+}
+
+/* Resume Style */
+/* -------------------------------------------------------------- */
+.resume {
+  margin-top: 15%;
+  padding: 1%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resume h1 {
+  text-align: center;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  padding-top: 2%;
+}
+
+.skills {
+  margin-top: 5%;
+}
+
+.skillsColumn, .hobbiesInterests {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--primary);
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.workHistory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.wHHeading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wHHeading ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.workContact, .workDuties {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.workContact ul {
+  list-style: none;
+  width: 100%;
+}
+
+.workContact i {
+  padding-right: 5%;
+}
+
+.hobbiesInterests {
+  margin-top: 5%;
+  align-items: center;
+}
+
+/* Project style */
+/* ------------------------------------------------ */
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 18%;
+  padding: 1%;
+}
+
+.singleProj {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--primary);
+  border: 1px solid #000;
+  flex: 0 0 100%;
+  margin-bottom: 5%;
+} 
+
+.singleProj p {
+  padding-left: 4%;
+}
+
+.singleProj h3 {
+  padding: 2%;
+  margin: 2%;
+  border: 1px solid #000;
+  background-color: var(--secondary);
+  text-align: center;
+}
+
+.projLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  margin: 2%;
+  border: 1px solid #000;
+  background-color: var(--secondary);
+}
+
+.projLinks:hover {
+  background-color: var(--tertiary);
+}
+
+.projLinks strong {
+  padding-left: 4%;
+}
+
+.singleProj a {
+  text-decoration: none;
+  color: var(--niceWhite);
+}
+
+.singleProj i {
+  color: #00fbff;
+}
+
+@media screen and (min-width: 850px) {
+
+}
+
+@media screen and (min-width: 1050px) {
+  /* General style */
+  /* ------------------------------------------------ */
+  .content {
+    margin: 3%;
+    flex-direction: row;
+  }
+
+  /* Navigation Bar style */
+  /* ------------------------------------------------ */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  nav {
+    all: unset;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navBar {
+    all: unset;
+    margin: 0;
+    background: var(--primary);
+    z-index: 999;
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-flow: row;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav a {
+    opacity: 1;
+  }
+
+  .logo {
+    padding-left: 13rem;
+    font-size: 1.5rem;
+  }
+
+  nav li {
+    all: unset;
+    margin-right: 2.5rem;
+  }
+
+  nav ul {
+    padding-right: 10rem;
+  }
+
+  /* Homepage Style */
+  /* ------------------------------------------------- */
+  .me {
+    flex: 1 1 35%;
+    margin-bottom: 0;
+  }
+  .homeMainSection {
+    flex: 1 1 65%;
+    padding: 3%;
+    justify-content: flex-start;
+  }
+  .about {
+    margin-bottom: 3%;
+  }
+  .myDetails {
+    padding-left: 15%;
+  }
+
+  /* Contact Style */
+  /* ------------------------------------------------- */
+  .contactContent {
+    margin: 5% 20%;
+  }
+
+  .contactFormDiv {
+    margin-top: 3%;
+  }
+
+  /* Resume Style */
+  /* ------------------------------------------------- */
+  .resume {
+    margin: 3% 15%;
+  }
+
+  .education {
+    align-items: center;
+  }
+
+  .skills {
+    margin-top: 1%;
+  }
+
+  .skillFlex {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .skillsColumn {
+    padding: 0 3%;
+    margin-left: 1%;
+  }
+
+  .workHistory {
+    margin-top: 1%;
+  }
+
+  .workInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .workContact {
+    width: 30%;
+  }
+
+  .hobbiesInterests {
+    margin: 1% 5%;
+  }
+
+  /* Projects Style */
+  /* ------------------------------------------------- */
+  .projects {
+    flex-flow: row wrap;
+    margin: 3% 10% 0% 10%;
+  }
+
+  .singleProj {
+    flex: 1 1 45%;
+    margin: 2%;
+  }
+
+}
